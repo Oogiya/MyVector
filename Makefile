@@ -150,6 +150,60 @@ src/Vector.cpp.s:
 	$(MAKE) -f CMakeFiles/Vector.dir/build.make CMakeFiles/Vector.dir/src/Vector.cpp.s
 .PHONY : src/Vector.cpp.s
 
+src/VectorClass.o: src/VectorClass.cpp.o
+
+.PHONY : src/VectorClass.o
+
+# target to build an object file
+src/VectorClass.cpp.o:
+	$(MAKE) -f CMakeFiles/Vector.dir/build.make CMakeFiles/Vector.dir/src/VectorClass.cpp.o
+.PHONY : src/VectorClass.cpp.o
+
+src/VectorClass.i: src/VectorClass.cpp.i
+
+.PHONY : src/VectorClass.i
+
+# target to preprocess a source file
+src/VectorClass.cpp.i:
+	$(MAKE) -f CMakeFiles/Vector.dir/build.make CMakeFiles/Vector.dir/src/VectorClass.cpp.i
+.PHONY : src/VectorClass.cpp.i
+
+src/VectorClass.s: src/VectorClass.cpp.s
+
+.PHONY : src/VectorClass.s
+
+# target to generate assembly for a file
+src/VectorClass.cpp.s:
+	$(MAKE) -f CMakeFiles/Vector.dir/build.make CMakeFiles/Vector.dir/src/VectorClass.cpp.s
+.PHONY : src/VectorClass.cpp.s
+
+src/VectorStruct.o: src/VectorStruct.cpp.o
+
+.PHONY : src/VectorStruct.o
+
+# target to build an object file
+src/VectorStruct.cpp.o:
+	$(MAKE) -f CMakeFiles/Vector.dir/build.make CMakeFiles/Vector.dir/src/VectorStruct.cpp.o
+.PHONY : src/VectorStruct.cpp.o
+
+src/VectorStruct.i: src/VectorStruct.cpp.i
+
+.PHONY : src/VectorStruct.i
+
+# target to preprocess a source file
+src/VectorStruct.cpp.i:
+	$(MAKE) -f CMakeFiles/Vector.dir/build.make CMakeFiles/Vector.dir/src/VectorStruct.cpp.i
+.PHONY : src/VectorStruct.cpp.i
+
+src/VectorStruct.s: src/VectorStruct.cpp.s
+
+.PHONY : src/VectorStruct.s
+
+# target to generate assembly for a file
+src/VectorStruct.cpp.s:
+	$(MAKE) -f CMakeFiles/Vector.dir/build.make CMakeFiles/Vector.dir/src/VectorStruct.cpp.s
+.PHONY : src/VectorStruct.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,6 +216,12 @@ help:
 	@echo "... src/Vector.o"
 	@echo "... src/Vector.i"
 	@echo "... src/Vector.s"
+	@echo "... src/VectorClass.o"
+	@echo "... src/VectorClass.i"
+	@echo "... src/VectorClass.s"
+	@echo "... src/VectorStruct.o"
+	@echo "... src/VectorStruct.i"
+	@echo "... src/VectorStruct.s"
 .PHONY : help
 
 
