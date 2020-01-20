@@ -3,16 +3,31 @@
 
 #include <iostream>
 
+template <typename T>
 class VectorClass {
 public:
-    VectorClass(int s);
-    VectorClass(std::initializer_list<double> lst);
+    //Constructors
+    VectorClass(unsigned int n);
+    VectorClass(std::initializer_list<T>);
+    VectorClass(unsigned int n, const T &value);
+    //Destructor
     ~VectorClass();
-    double& operator[](int i);
-    int size() const;
+    //Copy Constructor
+    VectorClass(const VectorClass<T> &);
+    //Copy Assignment
+    VectorClass<T> & operator =(const VectorClass<T> &);
+    //Move Constructor
+    VectorClass(VectorClass<T> &&);
+    //Move Assignment
+    VectorClass<T> & operator =(VectorClass<T> &&);
+    
+    T & operator[] (unsigned int i);
+    
+    unsigned int size() const;
+    
 private:
-    double* elem;
-    int sz;
+    unsigned int sz;
+    T* elem;
 };
 
 #endif

@@ -2,22 +2,37 @@
 #include <iostream>
 //#include <stdexcept>
 
-VectorClass::VectorClass(int s) {
-    if (s < 0) throw std::length_error{"Vector constructor: negative size"};
-    elem = new double[s];
-    sz = s;
-    //initialize elements
-    for (int i = 0; i != sz; ++i) elem[i] = 0;
+template<typename T>
+VectorClass<T>::VectorClass(unsigned int n): elem{ new T[n] }, sz {n} {
+    for (int i = 0; i != n; ++i) elem[i] = 0;
 }
-VectorClass::VectorClass(std::initializer_list<double> lst): elem{new double[lst.size()]}, sz{static_cast<int>(lst.size())} {
+template<typename T>
+VectorClass<T>::VectorClass(unsigned int n, const T &value): elem { new T[n] }, sz {n} {
+    for (int i = 0; i != n; ++i) elem[i] = value;
+}
+template<typename T>
+VectorClass<T>::VectorClass(std::initializer_list<T> lst): elem { new T[lst.size()] }, sz { lst.size() } {
     std::copy(lst.begin(), lst.end(), elem);
 }
-VectorClass::~VectorClass() {
-    delete[] elem;
+template<typename T>
+VectorClass<T>::~VectorClass() {
+    delete []elem;
 }
-double& VectorClass::operator [](int i) { 
-    if (i < 0 || size() <= i) throw std::out_of_range{"Vector::operator[]"};
+template<typename T>
+VectorClass<T>::VectorClass(VectorClass &&other) {
+    elem = new T[other.sz];
+    for (int i = 0; i < other.sz; ++i) elem[i] = std::move(other.elem[i]);
+    sz = other.sz;
+}
+template<typename T>
+VectorClass<T>::VectorClass(const VectorClass<T> &other): elem { new T[other.sz] }, sz { other.sz } {
+    for (int i = 0; i != other.sz; ++i) elem[i] = other.elem[i];
+}
+template<typename T>
+T& VectorClass<T>::operator [](unsigned int i) {
     return elem[i];
 }
-int VectorClass::size() const { return sz; }
-
+template<typename T>
+unsigned int VectorClass<T>::size() const {
+    return sz;
+}

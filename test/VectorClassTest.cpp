@@ -1,7 +1,7 @@
 #include <iostream>
 #include <assert.h>
 #include "../include/VectorClass.h"
-
+/*
 void TestVectorClass() {
     
     bool exceptionThrown = false;
@@ -13,3 +13,4 @@ void TestVectorClass() {
     }
     assert(exceptionThrown);
 }
+*/
