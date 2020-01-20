@@ -2,7 +2,7 @@
 
 CXX = g++
 DEBUG = -g
-CXXFLAGS = -Wall $(DEBUG) -std=c++14 -pthread
+CXXFLAGS = -Wall $(DEBUG) -std=c++1y -pthread
 LDFLAGS = -pthread
 
 Vector: ./src/VectorClass.cpp ./src/Vector.cpp
