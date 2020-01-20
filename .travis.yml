@@ -1,3 +1,14 @@
+dist: trusty
 language: cpp
 os: linux
-script: make
+sudo: required
+compiler: g++
+addons:
+        apt:
+                sources:
+                        - ubuntu-toolchain-r-test
+                packages:
+                        - g++-6
+                        - cmake
+script: 
+        - g++ -v && cmake --version
