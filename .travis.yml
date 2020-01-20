@@ -3,8 +3,6 @@ language: cpp
 os: linux
 sudo: required
 compiler: g++
-services:
-        - docker
 branches:
         only:
                 - Template_Migration
@@ -14,11 +12,6 @@ addons:
                         - ubuntu-toolchain-r-test
                 packages:
                         - g++-6
-                        - cmake
-install:
-        - docker build https://github.com/oogiya/myvector.git
-before_script:
-        - docker build --tag development -f Dockerfile.dev . 
+                        - cmake 
 script: 
-        - docker run https://github.com/oogiya/myvector.git
         - g++ -v && cmake --version
