@@ -3,6 +3,8 @@ language: cpp
 os: linux
 sudo: required
 compiler: g++
+services:
+        - docker
 addons:
         apt:
                 sources:
@@ -10,5 +12,10 @@ addons:
                 packages:
                         - g++-6
                         - cmake
+install:
+        - docker build -t oogiya/myvector
+before_script:
+        - docker build --tag development -f Dockerfile.dev . 
 script: 
+        - docker run oogiya/myvector $project
         - g++ -v && cmake --version
