@@ -1,5 +1,4 @@
 #include <iostream>
-#include "../test/VectorClassTest.cpp"
 #include "../include/VectorClass.h"
 
 void UnitTests() {
