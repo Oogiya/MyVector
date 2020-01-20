@@ -16,9 +16,9 @@ addons:
                         - g++-6
                         - cmake
 install:
-        - docker build -t https://github.com/oogiya/myvector
+        - docker build https://github.com/oogiya/myvector.git
 before_script:
         - docker build --tag development -f Dockerfile.dev . 
 script: 
-        - docker run https://github.com/oogiya/myvector
+        - docker run https://github.com/oogiya/myvector.git
         - g++ -v && cmake --version
