@@ -5,6 +5,9 @@ sudo: required
 compiler: g++
 services:
         - docker
+branches:
+        only:
+                - Template_Migration
 addons:
         apt:
                 sources:
@@ -13,9 +16,9 @@ addons:
                         - g++-6
                         - cmake
 install:
-        - docker build -t oogiya/myvector
+        - docker build -t https://github.com/oogiya/myvector
 before_script:
         - docker build --tag development -f Dockerfile.dev . 
 script: 
-        - docker run oogiya/myvector $project
+        - docker run https://github.com/oogiya/myvector
         - g++ -v && cmake --version
