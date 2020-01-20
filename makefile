@@ -4,10 +4,10 @@ CC = g++
 
 all: Vector dbg
 
-Vector: VectorClass.h VectorClass.cpp Vector.cpp
-	$(CC) -02 -std=c++11 -Wall Vector.cpp -o Vector
-dbg: VectorClass.h VectorClass.cpp Vector.cpp
-	$(CC) -2 -std=c++1 -Wall -D DEBUG Vector.cpp -o dbg
+Vector: ./include/VectorClass.h ./src/VectorClass.cpp ./src/Vector.cpp
+	$(CC) -02 -std=c++14 -Wall ./src/Vector.cpp -o Vector
+dbg: ./include/VectorClass.h ./src/VectorClass.cpp ./src/Vector.cpp
+	$(CC) -02 -std=c++14 -Wall -D DEBUG ./src/Vector.cpp -o dbg
 
 clean:
 	rm Vector || true
